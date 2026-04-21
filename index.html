@@ -92,6 +92,19 @@
             animation: marquee 30s linear infinite;
             width: max-content;
         }
+
+        .netflix-style-heading {
+            color: #e50914;
+            display: inline-block;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.15;
+            text-shadow:
+                0 1px 0 #7a0000,
+                0 2px 0 #640000,
+                0 6px 18px rgba(0, 0, 0, 0.55);
+            transform: scaleY(1.12);
+        }
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -455,7 +468,9 @@
             </div>
 
             <div class="mt-20 bg-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-10 border border-white/10">
-                <h3 class="text-4xl font-bold mb-8 text-center text-red-500">就活の構造を大きく変える</h3>
+                <h3 class="mb-8 text-center">
+                    <span class="netflix-style-heading text-4xl md:text-5xl">就活の構造を大きく変える</span>
+                </h3>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse min-w-[600px]">
                         <thead>
