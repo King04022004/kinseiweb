@@ -105,6 +105,76 @@
                 0 6px 18px rgba(0, 0, 0, 0.55);
             transform: scaleY(1.12);
         }
+
+        .c-heading {
+    position: relative;
+    display: inline-block;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    color: #f8fdff;
+    font-style: normal;
+    transform: skewX(-6deg);
+    text-shadow:
+        0 0 4px rgba(255,255,255,0.45),
+        0 0 12px rgba(80, 220, 255, 0.16),
+        0 0 26px rgba(80, 220, 255, 0.10);
+}
+
+.c-heading::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: -10px;
+    height: 14px;
+    border-radius: 9999px;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 180, 255, 0) 0%,
+        rgba(70, 200, 255, 0.22) 18%,
+        rgba(130, 225, 255, 1) 50%,
+        rgba(70, 200, 255, 0.22) 82%,
+        rgba(0, 180, 255, 0) 100%
+    );
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* 矢印はいったん消す */
+.c-heading::after {
+    display: none;
+    content: none;
+}
+
+.c-heading-accent {
+    display: inline-block;
+    background: linear-gradient(90deg, #c7f0ff 0%, #70d1ff 50%, #3d8fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transform: skewX(-6deg);
+    text-shadow:
+        0 0 12px rgba(80, 200, 255, 0.22),
+        0 0 28px rgba(80, 200, 255, 0.14);
+}
+
+@media (max-width: 768px) {
+    .c-heading {
+        transform: skewX(-2.5eg);
+    }
+
+    .c-heading-accent {
+        transform: skewX(-2.5deg);
+    }
+}
+.jp-particle-sm {
+    display: inline-block;
+    font-size: 0.72em;
+    transform: translateY(-0.02em);
+    margin: 0 0.03em;
+}
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -419,104 +489,106 @@
     </section>
 
     <section id="service" class="py-24 bg-dark text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent skew-x-12 transform origin-top-right"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent skew-x-12 transform origin-top-right"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-accent font-bold tracking-wider uppercase text-sm">Service</span>
-                <h2 class="text-3xl md:text-5xl font-black mt-2 heading-underline mx-auto">サービス設計</h2>
-                <p class="text-gray-400 mt-6 max-w-2xl mx-auto">“就活前から採用まで”を一気通貫で変える。<br>学生の意思決定を変え、企業の採用の質を変える。</p>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-accent font-bold tracking-wider uppercase text-sm">Service</span>
+            <h2 class="text-3xl md:text-5xl font-black mt-2 heading-underline mx-auto">サービス設計</h2>
+            <p class="text-[#FAF7F0]/90 mt-6 max-w-2xl mx-auto">“就活前から採用まで”を一気通貫で変える。<br>学生の意思決定を変え、企業の採用の質を変える。</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative">
+            <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent transform -translate-y-1/2 z-0 opacity-50"></div>
+
+            <div class="bg-[#2a2a2a] p-8 rounded-2xl relative z-10 border border-gray-700 hover:border-primary transition transform hover:-translate-y-2">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center font-black text-xl border-4 border-dark">01</div>
+                <h3 class="text-2xl font-bold mt-4 mb-4 text-center">マインドセット教育</h3>
+                <p class="text-[#FAF7F0]/85 text-sm mb-6 text-center">“なんとなく就活”をなくす</p>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>就活の本質理解（目的の再定義）</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>思考／価値観の言語化</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>キャリアのゴール設計</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>行動基準の確立</li>
+                </ul>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 relative">
-                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent transform -translate-y-1/2 z-0 opacity-50"></div>
-
-                <div class="bg-[#2a2a2a] p-8 rounded-2xl relative z-10 border border-gray-700 hover:border-primary transition transform hover:-translate-y-2">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center font-black text-xl border-4 border-dark">01</div>
-                    <h3 class="text-2xl font-bold mt-4 mb-4 text-center">マインドセット教育</h3>
-                    <p class="text-gray-400 text-sm mb-6 text-center">“なんとなく就活”をなくす</p>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>就活の本質理解（目的の再定義）</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>思考／価値観の言語化</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>キャリアのゴール設計</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div>行動基準の確立</li>
-                    </ul>
-                </div>
-
-                <div class="bg-[#2a2a2a] p-8 rounded-2xl relative z-10 border border-gray-700 hover:border-secondary transition transform hover:-translate-y-2 mt-8 md:mt-0">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-xl border-4 border-dark">02</div>
-                    <h3 class="text-2xl font-bold mt-4 mb-4 text-center">学生の可視化<br>（SNS / コンテンツ）</h3>
-                    <p class="text-gray-400 text-sm mb-6 text-center">“人となり”が見える状態をつくる</p>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div>インタビュー動画 「近大キャリア図鑑」</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div>プロフィール／価値の言語化</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div>発信による認知形成</li>
-                    </ul>
-                </div>
-
-                <div class="bg-[#2a2a2a] p-8 rounded-2xl relative z-10 border border-gray-700 hover:border-accent transition transform hover:-translate-y-2 mt-8 md:mt-0">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent text-dark rounded-full flex items-center justify-center font-black text-xl border-4 border-dark">03</div>
-                    <h3 class="text-2xl font-bold mt-4 mb-4 text-center">採用マッチング（人材紹介）</h3>
-                    <p class="text-gray-400 text-sm mb-6 text-center">“辞めない採用”を実現する</p>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>思考・価値観ベースのマッチング</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>企業との直接接点/li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>納得度の高い意思決定</li>
-                        <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>ミスマッチと早期離職を防ぐ</li>
-                    </ul>
-                </div>
+            <div class="bg-[#2a2a2a] p-8 rounded-2xl relative z-10 border border-gray-700 hover:border-secondary transition transform hover:-translate-y-2 mt-8 md:mt-0">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-xl border-4 border-dark">02</div>
+                <h3 class="text-2xl font-bold mt-4 mb-4 text-center">学生の可視化<br>（SNS / コンテンツ）</h3>
+                <p class="text-[#FAF7F0]/85 text-sm mb-6 text-center">“人となり”が見える状態をつくる</p>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div>インタビュー動画 「近大キャリア図鑑」</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div>プロフィール／価値の言語化</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div>発信による認知形成</li>
+                </ul>
             </div>
 
-            <div class="mt-20 bg-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-10 border border-white/10">
-                <h3 class="mb-8 text-center">
-                    <span class="netflix-style-heading text-4xl md:text-5xl">就活の構造を大きく変える</span>
-                </h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse min-w-[600px]">
-                        <thead>
-                            <tr class="border-b border-gray-600">
-                                <th class="p-4 text-gray-400 font-normal">項目</th>
-                                <th class="p-4 font-bold">従来の就活</th>
-                                <th class="p-4 font-black text-accent text-lg bg-accent/10 rounded-t-xl">近世</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm md:text-base">
-                            <tr class="border-b border-gray-700/50">
-                                <td class="p-4 text-gray-400">意思決定</td>
-                                <td class="p-4">なんとなく・雰囲気</td>
-                                <td class="p-4 text-accent font-bold bg-accent/5">言語化された意思</td>
-                            </tr>
-                            <tr class="border-b border-gray-700/50">
-                                <td class="p-4 text-gray-400">判断軸</td>
-                                <td class="p-4">知名度・条件</td>
-                                <td class="p-4 text-accent font-bold bg-accent/5">思考・価値観・納得度</td>
-                            </tr>
-                            <tr class="border-b border-gray-700/50">
-                                <td class="p-4 text-gray-400">行動</td>
-                                <td class="p-4 text-gray-300">とりあえずエントリー</td>
-                                <td class="p-4 text-accent font-bold bg-accent/5">意図を持った選択</td>
-                            </tr>
-                            <tr class="border-b border-gray-700/50">
-                                <td class="p-4 text-gray-400">情報</td>
-                                <td class="p-4 text-gray-300">表面的(HP・説明会)</td>
-                                <td class="p-4 text-accent font-bold bg-accent/5">内面(思考・価値観)</td>
-                            </tr>
-                            <tr class="border-b border-gray-700/50">
-                                <td class="p-4 text-gray-400">マッチング</td>
-                                <td class="p-4 text-gray-300">偶然</td>
-                                <td class="p-4 text-accent font-bold bg-accent/5">必然</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 text-gray-400">結果</td>
-                                <td class="p-4">早期離職が起きる</td>
-                                <td class="p-4 text-accent font-bold bg-accent/5 rounded-b-xl">納得して働き続ける</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="bg-[#2a2a2a] p-8 rounded-2xl relative z-10 border border-gray-700 hover:border-accent transition transform hover:-translate-y-2 mt-8 md:mt-0">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent text-dark rounded-full flex items-center justify-center font-black text-xl border-4 border-dark">03</div>
+                <h3 class="text-2xl font-bold mt-4 mb-4 text-center">採用マッチング（人材紹介）</h3>
+                <p class="text-[#FAF7F0]/85 text-sm mb-6 text-center">“辞めない採用”を実現する</p>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>思考・価値観ベースのマッチング</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>企業との直接接点</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>納得度の高い意思決定</li>
+                    <li class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-white"></div>ミスマッチと早期離職を防ぐ</li>
+                </ul>
             </div>
         </div>
-    </section>
+
+        <div class="mt-20 bg-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-10 border border-white/10">
+            <h3 class="mb-10 text-center relative overflow-visible py-2">
+                <span class="c-heading text-4xl md:text-5xl">
+                    就活<span class="jp-particle-sm">の</span>構造<span class="jp-particle-sm">を</span><span class="c-heading-accent">大きく変える</span>
+                </span>
+            </h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[600px]">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="p-4 text-[#FAF7F0]/80 font-normal">項目</th>
+                            <th class="p-4 font-bold">従来の就活</th>
+                            <th class="p-4 font-black text-accent text-lg bg-accent/10 rounded-t-xl">近世</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm md:text-base">
+                        <tr class="border-b border-gray-700/50">
+                            <td class="p-4 text-[#FAF7F0]/80">意思決定</td>
+                            <td class="p-4">なんとなく・雰囲気</td>
+                            <td class="p-4 text-accent font-bold bg-accent/5">言語化された意思</td>
+                        </tr>
+                        <tr class="border-b border-gray-700/50">
+                            <td class="p-4 text-[#FAF7F0]/80">判断軸</td>
+                            <td class="p-4">知名度・条件</td>
+                            <td class="p-4 text-accent font-bold bg-accent/5">思考・価値観・納得度</td>
+                        </tr>
+                        <tr class="border-b border-gray-700/50">
+                            <td class="p-4 text-[#FAF7F0]/80">行動</td>
+                            <td class="p-4 text-gray-300">とりあえずエントリー</td>
+                            <td class="p-4 text-accent font-bold bg-accent/5">意図を持った選択</td>
+                        </tr>
+                        <tr class="border-b border-gray-700/50">
+                            <td class="p-4 text-[#FAF7F0]/80">情報</td>
+                            <td class="p-4 text-gray-300">表面的(HP・説明会)</td>
+                            <td class="p-4 text-accent font-bold bg-accent/5">内面(思考・価値観)</td>
+                        </tr>
+                        <tr class="border-b border-gray-700/50">
+                            <td class="p-4 text-[#FAF7F0]/80">マッチング</td>
+                            <td class="p-4 text-gray-300">偶然</td>
+                            <td class="p-4 text-accent font-bold bg-accent/5">必然</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-[#FAF7F0]/80">結果</td>
+                            <td class="p-4">早期離職が起きる</td>
+                            <td class="p-4 text-accent font-bold bg-accent/5 rounded-b-xl">納得して働き続ける</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="py-12 bg-gradient-to-r from-accent to-yellow-600">
         <div class="max-w-5xl mx-auto px-6 text-center">
